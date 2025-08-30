@@ -1,0 +1,7 @@
+site_name: My Documents
+nav:
+  - Home : index.md
+  - "Page 1 : Data Architecture": Data Architecture.md
+  - "Page 2 : Data Modeling": Data Modeling.md
+  - "Page 3 : Apache Nifi": Nifi.md
+theme: readthedocs
