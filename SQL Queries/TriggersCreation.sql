@@ -48,3 +48,42 @@ CREATE OR REPLACE TRIGGER TrgTerritory
 BEFORE INSERT ON silver.DimTerritory
 FOR EACH ROW
 EXECUTE PROCEDURE FnTrgTerritory()
+
+
+-- Ship Method Dimension
+
+CREATE OR REPLACE FUNCTION FnTrgShipMethod()
+RETURNS TRIGGER
+AS 
+$$
+	BEGIN
+		DELETE FROM silver.DimShipMethod
+		WHERE "shipmethodid" = NEW."shipmethodid";
+		RETURN NEW;
+	END;
+$$ LANGUAGE PLPGSQL
+
+
+CREATE OR REPLACE TRIGGER TrgShipMethod
+BEFORE INSERT ON silver.DimShipMethod
+FOR EACH ROW
+EXECUTE PROCEDURE FnTrgShipMethod()
+
+
+-- Store Dimension
+CREATE OR REPLACE FUNCTION FnTrgStore()
+RETURNS TRIGGER
+AS 
+$$
+	BEGIN
+		DELETE FROM silver.DimStore
+		WHERE "businessentityid" = NEW."businessentityid";
+		RETURN NEW;
+	END;
+$$ LANGUAGE PLPGSQL
+
+CREATE OR REPLACE TRIGGER TrgStore
+BEFORE INSERT ON silver.DimStore
+FOR EACH ROW
+EXECUTE PROCEDURE FnTrgStore()
+
