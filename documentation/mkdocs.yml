@@ -6,4 +6,5 @@ nav:
   - "Page 3 : Apache Nifi": Nifi.md
   - "Page 4 : Apache Airflow & Utilities": Airflow.md
   - "Page 5 : SQL Queries": Sql.md
+  - "Page 6 : Additional Info & Setup" : last.md
 theme: readthedocs
