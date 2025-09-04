@@ -15,14 +15,17 @@
    git clone https://github.com/OmarGHamed/Sales-Data-Platform.git
    cd Sales-Data-Platform
    ```
+2. **Run "Run_This_Once.sh" only Once** to inialize the packages directory that will be used in airflow
 
-2. **Start Database** : Create PostgreSQL database using provided SQL scripts in the `Sql.md` documentation.
+3. **Run "Start_Components.sh"** to start all components (Hadoop , NIFI , Airflow)
 
-3. **Run Initial Data Ingestion** : Use NiFi UI to trigger workflows and verify HDFS data and trigger Airflow DAG via NiFi.
+4. **Start Database** : Create PostgreSQL database using provided SQL scripts in the `Sql.md` documentation.
 
-4. **Check Data Warehouse** : Use `psql` or PgAdmin to inspect loaded tables.
+5. **Run Initial Data Ingestion** : Use NiFi UI to trigger workflows and verify HDFS data and trigger Airflow DAG via NiFi.
 
-5. **Visualize in Power BI** : Connect to PostgreSQL and build simple dashboards.
+6. **Check Data Warehouse** : Use `psql` or PgAdmin to inspect loaded tables.
+
+7. **Visualize in Power BI** : Connect to PostgreSQL and build simple dashboards.
 
 
 ## Directory Structure
