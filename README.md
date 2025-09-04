@@ -25,6 +25,7 @@ A modern, modular platform for scalable sales data processing, analytics, and or
 - [Directory Structure](#directory-structure)
 - [Setup Guide](#setup-guide)
 - [Notes](#notes)
+- [Documentation](#documentation)
 
 ---
 
@@ -323,4 +324,5 @@ For full technical details, guides, diagrams, and explanations, use the MkDocs d
 ## Author
 
 OmarGHamed
+
 
