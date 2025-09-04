@@ -13,7 +13,7 @@ def SalesDataPlatfromDag():
 
         @task()
         def AddressETL():
-            raw_df = u.extract_parquet("address.parquet")
+            raw_df = u.extract_parquet("Address.parquet")
             transformed_df = u.AddressTransform(raw_df)
             u.load_to_postgresql(transformed_df=transformed_df , Database= "salesdatawarehouse" , schema = "silver" , table = "dimaddress")
         AddressETL()
@@ -66,12 +66,23 @@ def SalesDataPlatfromDag():
 
     @task_group()
     def CurrencyRate():
-        pass
+        @task
+        def CurrencyRateETL():
+            RawDataFrame = u.extract_parquet("CurrencyRate.parquet")
+            TransformedDataFrame = u.CurrencyRateTransform(RawDataFrame)
+            u.load_to_postgresql(TransformedDataFrame , Database = "salesdatawarehouse" , schema = "silver" , table = "DimCurrencyRate")
+        CurrencyRateETL() 
 
     @task_group()
     def SalesOrderHeader_Customer():
-        pass
-
+        @task
+        def SalesETL():
+            SalesRawDataFrame = u.extract_parquet("SalesOrderHeader.parquet")
+            CustomerRawDataFrame = u.extract_parquet("Customer.parquet")
+            TransformedDataFrame = u.FactSalesTransform(SalesRawDataFrame = SalesRawDataFrame , CustomerRawDataFrame = CustomerRawDataFrame)
+            u.load_to_postgresql(TransformedDataFrame , Database = "salesdatawarehouse" , schema = "silver" , table = "FactSales")
+        SalesETL()
+        
     Address() >> CreditCard() >> ShipMethod() >> Territory() >> Store() >> Person() >> CurrencyRate() >> SalesOrderHeader_Customer()
 
 

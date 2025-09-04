@@ -63,3 +63,38 @@ CREATE TABLE Silver.DimPerson
 		ModifiedDate DATE
 );
 
+CREATE TABLE Silver.DimCurrencyRate
+(
+		CurrencyRateID BIGINT PRIMARY KEY,
+		CurrencyRateDate DATE,
+		FromCurrencyCode VARCHAR(255),
+		ToCurrencyCode VARCHAR(255),
+		AverageRate DECIMAL(10 , 4),
+		EndOfDayRate DECIMAL(10 , 4),
+		ModifiedDate DATE
+)
+
+CREATE TABLE Silver.FactSales
+(
+		SalesOrderID BIGINT PRIMARY KEY,
+		PersonID BIGINT  REFERENCES Silver.DimPerson(businessentityid),
+		StoreID BIGINT REFERENCES Silver.DimStore(businessentityid),
+		TerritoryID BIGINT  REFERENCES Silver.DimTerritory(territoryid),
+		BillToAddressID BIGINT  REFERENCES Silver.DimAddress(addressid),
+		ShipToAddressID BIGINT  REFERENCES Silver.DimAddress(addressid),
+		ShipMethodID BIGINT  REFERENCES Silver.DimShipMethod(shipmethodid),
+		CreditCardID BIGINT  REFERENCES Silver.DimCreditCard(creditcardid),
+		CurrencyRateID BIGINT  REFERENCES Silver.DimCurrencyRate(currencyrateid),
+		AccountNumber VARCHAR(255),
+		OrderDate DATE,
+		DueDate DATE,
+		ShipDate DATE,
+		Status INT,
+		SubTotal DECIMAL(10 , 4),
+		TaxAmt DECIMAL(10 , 4),
+		Freight DECIMAL(10 , 4),
+		TotalDue DECIMAL(10 , 4),
+		ModifiedDate DATE
+
+
+)

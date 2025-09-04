@@ -87,3 +87,59 @@ BEFORE INSERT ON silver.DimStore
 FOR EACH ROW
 EXECUTE PROCEDURE FnTrgStore()
 
+
+-- Person Dimension
+
+CREATE OR REPLACE FUNCTION FnTrgPerson()
+RETURNS TRIGGER
+AS 
+$$
+	BEGIN
+		DELETE FROM silver.DimPerson
+		WHERE "businessentityid" = NEW."businessentityid";
+		RETURN NEW;
+	END;
+$$ LANGUAGE PLPGSQL
+
+
+CREATE OR REPLACE TRIGGER TrgPerson
+BEFORE INSERT ON silver.DimPerson
+FOR EACH ROW
+EXECUTE PROCEDURE FnTrgPerson()
+
+-- CurrencyRate Dimension
+
+
+CREATE OR REPLACE FUNCTION FnTrgCurrencyRate()
+RETURNS TRIGGER
+AS 
+$$
+	BEGIN
+		DELETE FROM silver.DimCurrencyRate
+		WHERE "currencyrateid" = NEW."currencyrateid";
+		RETURN NEW;
+	END;
+$$ LANGUAGE PLPGSQL
+
+
+CREATE OR REPLACE TRIGGER TrgCurrencyRate
+BEFORE INSERT ON silver.DimCurrencyRate
+FOR EACH ROW
+EXECUTE PROCEDURE FnTrgCurrencyRate()
+
+-- Sales Fact Table
+CREATE OR REPLACE FUNCTION FnTrgFactSales()
+RETURNS TRIGGER
+AS 
+$$
+	BEGIN
+		DELETE FROM silver.FactSales
+		WHERE "salesorderid" = NEW."salesorderid";
+		RETURN NEW;
+	END;
+$$ LANGUAGE PLPGSQL
+
+CREATE OR REPLACE TRIGGER TrgFactSales
+BEFORE INSERT ON silver.FactSales
+FOR EACH ROW
+EXECUTE PROCEDURE FnTrgFactSales()

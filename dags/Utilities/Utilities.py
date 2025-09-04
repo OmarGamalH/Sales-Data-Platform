@@ -44,7 +44,7 @@ def load_to_postgresql(transformed_df : ps.DataFrame , Database , schema , table
         .option("driver", "org.postgresql.Driver")\
         .mode("append").save()
     
-def GetFKReplacement(RawDataFrame , PrimaryKey , TargetColumn):
+def GetFKReplacement(RawDataFrame : ps.DataFrame , PrimaryKey , TargetColumn):
     """
         NOTE
         ----
@@ -68,7 +68,7 @@ def GetFKReplacement(RawDataFrame , PrimaryKey , TargetColumn):
     # replacements = {}
     # for row in rdd_v:
     #     replacements[row["BusinessEntityID"]] = row["smallest"]
-    replacements = d_df_v_3
+    replacements = d_df_v_3.drop_duplicates([f"{PrimaryKey}"])
     return replacements
 
 def AddressTransform(RawDataFrame) -> ps.DataFrame:
@@ -140,7 +140,7 @@ def StoreTransform(RawDataFrame):
     df_v_1 = RawDataFrame.select(["BusinessEntityID" , "Name" , "ModifiedDate"])
     df_v_2 = df_v_1.withColumn("Name" , f.trim("Name")).withColumn("Name" , f.initcap("Name"))
     df_v_3 = df_v_2.drop_duplicates(subset=["Name"])
-    df_final_v = df_v_3.orderBy("BusinessEntityID")
+    df_final_v = df_v_3.withColumn("ModifiedDate" , f.col("ModifiedDate").cast(types.DateType())).orderBy("BusinessEntityID")
     return df_final_v
 
 
@@ -156,5 +156,53 @@ def PersonTransform(RawDataFrame):
     cols = df_v_4.columns
     cols.remove("NameStyle")
     df_final_v = df_v_4.orderBy("BusinessEntityID").select(cols)
+
+    return df_final_v
+
+def extract_duplicates_mapping(CsvName):
+    try:
+        return spark.read.format("csv").option("header" , True).load(f"hdfs:/nifi_dest/duplicates_mapping/{CsvName}")
+    except Exception as e:
+        return None
+def CurrencyRateTransform(RawDataFrame):
+    df_v_1 = RawDataFrame.withColumn("CurrencyRateDate" , f.col("CurrencyRateDate").cast(types.DateType()))\
+                     .withColumn("ModifiedDate" , f.col("ModifiedDate").cast(types.DateType()))
+    df_v_2 = df_v_1.withColumn("FromCurrencyCode" , f.upper("FromCurrencyCode"))\
+                .withColumn("ToCurrencyCode" , f.upper("ToCurrencyCode"))
+    df_v_3 = df_v_2.withColumn("AverageRate" , f.col("AverageRate").cast(types.DecimalType(10 , 4)))\
+                .withColumn("EndOfDayRate" , f.col("EndOfDayRate").cast(types.DecimalType(10 , 4)))
+
+    df_final_v = df_v_3.orderBy("CurrencyRateID")
+
+    return df_final_v
+
+
+def proccess_duplicates(DataFrame , DuplicatesDataFrame , DuplicatesPrimaryKey , ReplacementKey):
+    RawDupRdd = DuplicatesDataFrame.rdd.collect()
+    to_replace = [*map(lambda row : int(row[f"{DuplicatesPrimaryKey}"]) , RawDupRdd)]
+    value = [*map(lambda row : int(row["smallest"]) , RawDupRdd)]
+    return DataFrame.replace(to_replace = to_replace , value = value , subset = [f"{ReplacementKey}"])
+
+def FactSalesTransform(SalesRawDataFrame , CustomerRawDataFrame):
+    JoinedRawDataFrame = SalesRawDataFrame.alias("sales").join(CustomerRawDataFrame.alias("customer") , on = "CustomerID" , how = "inner")
+    df_v_1 = JoinedRawDataFrame.select(["SalesOrderID" , "PersonID" , "StoreID" , "customer.TerritoryID" , "BillToAddressID" , "ShipToAddressID" 
+                                    , "ShipMethodID" , "CreditCardID" , "CurrencyRateID" ,"customer.AccountNumber" ,  "OrderDate"
+                                    , "DueDate" , "ShipDate" , "Status" 
+                                     , "SubTotal" , "TaxAmt" , "Freight" , "TotalDue" , "sales.ModifiedDate"])
+    
+    df_v_2 = df_v_1.withColumn("OrderDate" , f.col("OrderDate").cast(types.DateType()))\
+               .withColumn("DueDate" , f.col("DueDate").cast(types.DateType()))\
+               .withColumn("ShipDate" , f.col("ShipDate").cast(types.DateType()))\
+               .withColumn("ModifiedDate" , f.col("ModifiedDate").cast(types.DateType()))
+    
+    DuplicatessDataFrame = extract_duplicates_mapping("Store")
+    df_v_3 = proccess_duplicates(df_v_2 , DuplicatessDataFrame , 'BusinessEntityID' , 'StoreID')
+
+    df_v_4 = df_v_3.withColumn("SubTotal" , f.col("SubTotal").cast(types.DecimalType(10 , 4)))\
+                .withColumn("TaxAmt" , f.col("TaxAmt").cast(types.DecimalType(10 , 4)))\
+                .withColumn("Freight" , f.col("Freight").cast(types.DecimalType(10 , 4)))\
+                .withColumn("TotalDue" , f.col("TotalDue").cast(types.DecimalType(10 , 4)))
+    
+    df_final_v = df_v_4
 
     return df_final_v
