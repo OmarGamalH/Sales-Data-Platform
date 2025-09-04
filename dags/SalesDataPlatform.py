@@ -47,12 +47,20 @@ def SalesDataPlatfromDag():
 
     @task_group()
     def Store():
+        
+        @task
+        def StoreDuplicatesSaving():
+            RawDataFrame = u.extract_parquet("Store.parquet")
+            DuplicatesDataFrame = u.GetFKReplacement(RawDataFrame = RawDataFrame , PrimaryKey = "BusinessEntityID" , TargetColumn = "Name")
+            u.load_to_duplicates_archive(DataFrame = DuplicatesDataFrame , Name = "Store")
+
         @task
         def StoreETL():
             RawDataFrame = u.extract_parquet("Store.parquet")
             TransformedDataFrame = u.StoreTransform(RawDataFrame)
             u.load_to_postgresql(TransformedDataFrame , Database = "salesdatawarehouse" , schema = "silver" , table = "DimStore")            
-        StoreETL()
+         
+        StoreDuplicatesSaving() >> StoreETL()
 
     @task_group()
     def Person():

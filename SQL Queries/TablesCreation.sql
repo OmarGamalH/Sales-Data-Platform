@@ -77,14 +77,14 @@ CREATE TABLE Silver.DimCurrencyRate
 CREATE TABLE Silver.FactSales
 (
 		SalesOrderID BIGINT PRIMARY KEY,
-		PersonID BIGINT  REFERENCES Silver.DimPerson(businessentityid),
-		StoreID BIGINT REFERENCES Silver.DimStore(businessentityid),
-		TerritoryID BIGINT  REFERENCES Silver.DimTerritory(territoryid),
-		BillToAddressID BIGINT  REFERENCES Silver.DimAddress(addressid),
-		ShipToAddressID BIGINT  REFERENCES Silver.DimAddress(addressid),
-		ShipMethodID BIGINT  REFERENCES Silver.DimShipMethod(shipmethodid),
-		CreditCardID BIGINT  REFERENCES Silver.DimCreditCard(creditcardid),
-		CurrencyRateID BIGINT  REFERENCES Silver.DimCurrencyRate(currencyrateid),
+		PersonID BIGINT,        --    REFERENCES Silver.DimPerson(businessentityid),
+		StoreID BIGINT,         --    REFERENCES Silver.DimStore(businessentityid),
+		TerritoryID BIGINT,     --    REFERENCES Silver.DimTerritory(territoryid),
+		BillToAddressID BIGINT, --    REFERENCES Silver.DimAddress(addressid),
+		ShipToAddressID BIGINT, --    REFERENCES Silver.DimAddress(addressid),
+		ShipMethodID BIGINT,    --    REFERENCES Silver.DimShipMethod(shipmethodid),
+		CreditCardID BIGINT,    --    REFERENCES Silver.DimCreditCard(creditcardid),
+		CurrencyRateID BIGINT,  --    REFERENCES Silver.DimCurrencyRate(currencyrateid),
 		AccountNumber VARCHAR(255),
 		OrderDate DATE,
 		DueDate DATE,
@@ -98,3 +98,5 @@ CREATE TABLE Silver.FactSales
 
 
 )
+
+

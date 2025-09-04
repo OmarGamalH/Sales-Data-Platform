@@ -1,0 +1,98 @@
+2025-09-04 05:21:53,147 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-04 05:22:36,217 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-04 05:22:36,240 - Utilities.Utilities - INFO - Transforming of Address Table Started
+2025-09-04 05:22:51,277 - Utilities.Utilities - INFO - Transforming of Address Table Ended
+2025-09-04 05:22:51,282 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.dimaddress started
+2025-09-04 06:21:08,550 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-04 06:21:24,093 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-04 06:21:24,095 - Utilities.Utilities - INFO - Transforming of Address Table Started
+2025-09-04 06:21:31,164 - Utilities.Utilities - INFO - Transforming of Address Table Ended
+2025-09-04 06:21:31,165 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.dimaddress started
+2025-09-04 06:24:35,137 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.dimaddress ended
+2025-09-04 06:25:45,151 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-04 06:25:57,352 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-04 06:25:57,355 - Utilities.Utilities - INFO - Transforming of Address Table Started
+2025-09-04 06:26:02,068 - Utilities.Utilities - INFO - Transforming of Address Table Ended
+2025-09-04 06:26:02,069 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.dimaddress started
+2025-09-04 06:26:22,019 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.dimaddress ended
+2025-09-04 06:27:03,156 - Utilities.Utilities - INFO - start the extraction of CreditCard.parquet
+2025-09-04 06:27:11,593 - Utilities.Utilities - INFO - extraction of CreditCard.parquet has been done successfully
+2025-09-04 06:27:11,593 - Utilities.Utilities - INFO - Transforming of CreditCard Table Started
+2025-09-04 06:27:16,211 - Utilities.Utilities - INFO - Transforming of CreditCard Table Ended
+2025-09-04 06:27:16,211 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.dimcreditcard started
+2025-09-04 06:27:38,700 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.dimcreditcard ended
+2025-09-04 06:28:13,439 - Utilities.Utilities - INFO - start the extraction of ShipMethod.parquet
+2025-09-04 06:28:25,860 - Utilities.Utilities - INFO - extraction of ShipMethod.parquet has been done successfully
+2025-09-04 06:28:25,861 - Utilities.Utilities - INFO - Transforming of ShipMethod Table Started
+2025-09-04 06:28:28,354 - Utilities.Utilities - INFO - Transforming of ShipMethod Table Ended
+2025-09-04 06:28:28,354 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimShipMethod started
+2025-09-04 06:28:46,883 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimShipMethod ended
+2025-09-04 06:29:15,877 - Utilities.Utilities - INFO - start the extraction of SalesTerritory.parquet
+2025-09-04 06:29:23,592 - Utilities.Utilities - INFO - extraction of SalesTerritory.parquet has been done successfully
+2025-09-04 06:29:23,592 - Utilities.Utilities - INFO - Transforming of Territory Table Started
+2025-09-04 06:29:26,240 - Utilities.Utilities - INFO - Transforming of Territory Table Ended
+2025-09-04 06:29:26,242 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimTerritory started
+2025-09-04 06:29:44,348 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimTerritory ended
+2025-09-04 06:30:07,454 - Utilities.Utilities - INFO - start the extraction of Store.parquet
+2025-09-04 06:30:22,097 - Utilities.Utilities - INFO - extraction of Store.parquet has been done successfully
+2025-09-04 06:31:10,536 - Utilities.Utilities - INFO - start the extraction of Store.parquet
+2025-09-04 06:31:22,036 - Utilities.Utilities - INFO - extraction of Store.parquet has been done successfully
+2025-09-04 06:31:22,037 - Utilities.Utilities - INFO - Transforming of Store Table Started
+2025-09-04 06:31:23,988 - Utilities.Utilities - INFO - Transforming of Store Table Ended
+2025-09-04 06:31:23,989 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimStore started
+2025-09-04 06:57:48,815 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-04 06:58:14,366 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-04 06:58:14,375 - Utilities.Utilities - INFO - Transforming of Address Table Started
+2025-09-04 06:58:22,800 - Utilities.Utilities - INFO - Transforming of Address Table Ended
+2025-09-04 06:58:22,801 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.dimaddress started
+2025-09-04 06:58:54,955 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.dimaddress ended
+2025-09-04 06:59:27,848 - Utilities.Utilities - INFO - start the extraction of CreditCard.parquet
+2025-09-04 06:59:40,642 - Utilities.Utilities - INFO - extraction of CreditCard.parquet has been done successfully
+2025-09-04 06:59:40,643 - Utilities.Utilities - INFO - Transforming of CreditCard Table Started
+2025-09-04 06:59:46,399 - Utilities.Utilities - INFO - Transforming of CreditCard Table Ended
+2025-09-04 06:59:46,400 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.dimcreditcard started
+2025-09-04 07:00:22,274 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.dimcreditcard ended
+2025-09-04 07:00:55,818 - Utilities.Utilities - INFO - start the extraction of ShipMethod.parquet
+2025-09-04 07:01:07,293 - Utilities.Utilities - INFO - extraction of ShipMethod.parquet has been done successfully
+2025-09-04 07:01:07,294 - Utilities.Utilities - INFO - Transforming of ShipMethod Table Started
+2025-09-04 07:01:09,410 - Utilities.Utilities - INFO - Transforming of ShipMethod Table Ended
+2025-09-04 07:01:09,411 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimShipMethod started
+2025-09-04 07:01:42,902 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimShipMethod ended
+2025-09-04 07:02:19,024 - Utilities.Utilities - INFO - start the extraction of SalesTerritory.parquet
+2025-09-04 07:02:29,991 - Utilities.Utilities - INFO - extraction of SalesTerritory.parquet has been done successfully
+2025-09-04 07:02:29,992 - Utilities.Utilities - INFO - Transforming of Territory Table Started
+2025-09-04 07:02:33,221 - Utilities.Utilities - INFO - Transforming of Territory Table Ended
+2025-09-04 07:02:33,221 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimTerritory started
+2025-09-04 07:02:54,217 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimTerritory ended
+2025-09-04 07:03:26,427 - Utilities.Utilities - INFO - start the extraction of Store.parquet
+2025-09-04 07:03:37,686 - Utilities.Utilities - INFO - extraction of Store.parquet has been done successfully
+2025-09-04 07:04:25,044 - Utilities.Utilities - INFO - start the extraction of Store.parquet
+2025-09-04 07:04:37,705 - Utilities.Utilities - INFO - extraction of Store.parquet has been done successfully
+2025-09-04 07:04:37,710 - Utilities.Utilities - INFO - Transforming of Store Table Started
+2025-09-04 07:04:40,051 - Utilities.Utilities - INFO - Transforming of Store Table Ended
+2025-09-04 07:04:40,052 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimStore started
+2025-09-04 07:05:00,669 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimStore ended
+2025-09-04 07:05:36,944 - Utilities.Utilities - INFO - start the extraction of Person.parquet
+2025-09-04 07:05:45,978 - Utilities.Utilities - INFO - extraction of Person.parquet has been done successfully
+2025-09-04 07:05:45,982 - Utilities.Utilities - INFO - Transforming of Person Table Started
+2025-09-04 07:05:48,557 - Utilities.Utilities - INFO - Transforming of Person Table Ended
+2025-09-04 07:05:48,557 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimPerson started
+2025-09-04 07:06:14,559 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimPerson ended
+2025-09-04 07:06:49,985 - Utilities.Utilities - INFO - start the extraction of CurrencyRate.parquet
+2025-09-04 07:07:01,316 - Utilities.Utilities - INFO - extraction of CurrencyRate.parquet has been done successfully
+2025-09-04 07:07:01,318 - Utilities.Utilities - INFO - Transforming of CurrencyRate Table Started
+2025-09-04 07:07:03,249 - Utilities.Utilities - INFO - Transforming of CurrencyRate Table Ended
+2025-09-04 07:07:03,249 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimCurrencyRate started
+2025-09-04 07:07:29,517 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimCurrencyRate ended
+2025-09-04 07:08:03,070 - Utilities.Utilities - INFO - start the extraction of SalesOrderHeader.parquet
+2025-09-04 07:08:12,895 - Utilities.Utilities - INFO - extraction of SalesOrderHeader.parquet has been done successfully
+2025-09-04 07:08:12,896 - Utilities.Utilities - INFO - start the extraction of Customer.parquet
+2025-09-04 07:08:13,984 - Utilities.Utilities - INFO - extraction of Customer.parquet has been done successfully
+2025-09-04 07:08:13,984 - Utilities.Utilities - INFO - Transforming of FactSales Table Started
+2025-09-04 07:08:19,432 - Utilities.Utilities - INFO - Extracting Store Mapping Table Started
+2025-09-04 07:08:26,192 - Utilities.Utilities - INFO - Extracting Store Mapping Table Ended
+2025-09-04 07:08:26,193 - Utilities.Utilities - INFO - Processing Mapping Table Started
+2025-09-04 07:08:27,413 - Utilities.Utilities - INFO - Processing Mapping Table Ended
+2025-09-04 07:08:28,225 - Utilities.Utilities - INFO - Transforming of FactSales Table Ended
+2025-09-04 07:08:28,226 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.FactSales started
+2025-09-04 07:08:46,579 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.FactSales ended

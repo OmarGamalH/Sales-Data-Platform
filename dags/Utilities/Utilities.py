@@ -7,28 +7,30 @@ import datetime
 from pyspark.sql.window import Window
 
 
-# current_dir = os.getcwd()
-# logging_file = os.path.join(current_dir ,"logs.log")
+current_dir = os.path.dirname(__file__)
+logging_file = os.path.join(current_dir ,"logs.log")
+
 spark = ps.SparkSession.builder \
         .config("spark.jars" , "/usr/local/nifi/sqljdbc/enu/jars/postgresql-42.7.7.jar")\
         .appName("spark app").getOrCreate()
 
 
-# logger = logging.getLogger(__name__)
-# logger.setLevel(logging.DEBUG)
-# file_handler = logging.FileHandler(logging_file)
-# formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-# file_handler.setFormatter(formatter)
-# logger.addHandler(file_handler)
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+file_handler = logging.FileHandler(logging_file)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
 
 pyspark_log = logging.getLogger('pyspark').setLevel(logging.CRITICAL)
 py4j_logger = logging.getLogger("py4j").setLevel(logging.CRITICAL)
 
 def extract_parquet(filename):
+    
     try:
-       # logger.info(f"start the extraction of {filename}")
+        logger.info(f"start the extraction of {filename}")
         df = spark.read.parquet(f"hdfs:/nifi_dest/files/{filename}")
-       # logger.info(f"extraction of {filename} has been done successfully")
+        logger.info(f"extraction of {filename} has been done successfully")
         return df
     except Exception as e:
        # logger.error(e)
@@ -36,6 +38,7 @@ def extract_parquet(filename):
 
 
 def load_to_postgresql(transformed_df : ps.DataFrame , Database , schema , table):
+    logger.info(f"loading of Dataframe To {Database}.{schema}.{table} started")
     transformed_df.write.format("jdbc") \
         .option("url", f"jdbc:postgresql://172.21.96.1:5432/{Database}") \
         .option("dbtable", f"{schema}.{table}") \
@@ -43,8 +46,9 @@ def load_to_postgresql(transformed_df : ps.DataFrame , Database , schema , table
         .option("password", "Gemy0100") \
         .option("driver", "org.postgresql.Driver")\
         .mode("append").save()
+    logger.info(f"loading of Dataframe To {Database}.{schema}.{table} ended")
     
-def GetFKReplacement(RawDataFrame : ps.DataFrame , PrimaryKey , TargetColumn):
+def GetFKReplacement(RawDataFrame , PrimaryKey , TargetColumn):
     """
         NOTE
         ----
@@ -72,15 +76,18 @@ def GetFKReplacement(RawDataFrame : ps.DataFrame , PrimaryKey , TargetColumn):
     return replacements
 
 def AddressTransform(RawDataFrame) -> ps.DataFrame:
+    logger.info(f"Transforming of Address Table Started")
     df_v_1 = RawDataFrame.withColumn("AddressLine1" , f.trim("AddressLine1")).withColumn("AddressLine2" , f.trim("AddressLine2")).withColumn("City" , f.trim("City"))
     df_v_2 = df_v_1.dropna("any" , subset=["AddressLine1"])
     df_v_3 = df_v_2.withColumn("AddressLine1" , f.initcap("AddressLine1")).withColumn("AddressLine2" , f.initcap("AddressLine2")).withColumn("City" , f.initcap("City"))
     df_v_4 = df_v_3.withColumn("ModifiedDate" , f.col("ModifiedDate").cast(types.DateType()))
     df_final_v = df_v_4.withColumn("ModifiedDate" , f.lit(datetime.datetime.now()))
+    logger.info(f"Transforming of Address Table Ended")
     return df_final_v 
 
 
 def CreditCardTransform(RawDataFrame) -> ps.DataFrame:
+    logger.info(f"Transforming of CreditCard Table Started")
     df_v_1 = RawDataFrame.filter(f.length(f.col("CardNumber")) == 14)
     df_v_2 = df_v_1\
     .withColumn("CardType" , f.initcap("CardType"))\
@@ -89,10 +96,12 @@ def CreditCardTransform(RawDataFrame) -> ps.DataFrame:
                 .otherwise(f.col("ExpMonth")))
     df_v_3 = df_v_2.drop_duplicates(subset=["CardNumber"])
     df_final_v = df_v_3.orderBy("CreditCardID").withColumn('ModifiedDate' , f.col("ModifiedDate").cast(types.DateType()))
+    logger.info(f"Transforming of CreditCard Table Ended")
     return df_final_v
 
 
 def TerritoryTransform(RawDataFrame) -> ps.DataFrame:
+    logger.info(f"Transforming of Territory Table Started")
     df_v_1 = RawDataFrame.withColumn("Name" , f.trim("Name"))\
         .withColumn("CountryRegionCode" , f.trim("CountryRegionCode"))\
         .withColumn("Group" , f.trim("Group"))
@@ -112,11 +121,13 @@ def TerritoryTransform(RawDataFrame) -> ps.DataFrame:
     .withColumn("CostYTD" , f.col("CostYTD").cast(types.DecimalType(20 , 4)))\
     .withColumn("CostLastYear" , f.col("CostLastYear").cast(types.DecimalType(20 , 4)))\
     .withColumn("ModifiedDate" , f.col("ModifiedDate").cast(types.DateType()))
+    logger.info(f"Transforming of Territory Table Ended")
     return df_final_v    
 
 
 
 def ShipMethodTransform(RawDataFrame):
+    logger.info(f"Transforming of ShipMethod Table Started")
     cols = RawDataFrame.columns
     cols.remove("rowguid")
     df_v_1 = RawDataFrame.select(cols)
@@ -126,25 +137,29 @@ def ShipMethodTransform(RawDataFrame):
     df_v_4 = df_v_3.withColumn("ShipBase" , f.col("ShipBase").cast(types.DecimalType(10 , 4)))\
                 .withColumn("ShipRate" , f.col("ShipRate").cast(types.DecimalType(10 , 4)))
     df_final_v = df_v_4.withColumn("ModifiedDate" , f.col("ModifiedDate").cast(types.DateType())).orderBy("ShipMethodID")
-
+    logger.info(f"Transforming of ShipMethod Table Ended")
     return df_final_v
 
 
 
 def load_to_duplicates_archive(DataFrame , Name):
-    DataFrame.write.mode("overwrite").format("csv").option("header" , True).save(f"hdfs:/nifi_dest/duplicates_mapping/{Name}")
-
+    logging.info(f"Loading Duplicates Mapping {Name} Table Started")
+    DataFrame.write.mode("append").format("csv").option("header" , True).save(f"hdfs:/nifi_dest/duplicates_mapping/{Name}")
+    logging.info(f"Loading Duplicates Mapping {Name} Table Ended")
 
 
 def StoreTransform(RawDataFrame):
+    logger.info(f"Transforming of Store Table Started")
     df_v_1 = RawDataFrame.select(["BusinessEntityID" , "Name" , "ModifiedDate"])
     df_v_2 = df_v_1.withColumn("Name" , f.trim("Name")).withColumn("Name" , f.initcap("Name"))
     df_v_3 = df_v_2.drop_duplicates(subset=["Name"])
     df_final_v = df_v_3.withColumn("ModifiedDate" , f.col("ModifiedDate").cast(types.DateType())).orderBy("BusinessEntityID")
+    logger.info(f"Transforming of Store Table Ended")
     return df_final_v
 
 
 def PersonTransform(RawDataFrame):
+    logger.info(f"Transforming of Person Table Started")
     df_v_1 = RawDataFrame.withColumn("PersonType" , f.when(f.col("PersonType").isNull() , "OT").otherwise(f.col("PersonType")))
     df_v_2 = df_v_1.withColumn("Title" , f.when(f.col("Title").isNull() , "Mx.").otherwise(f.col("Title")))
     df_v_3 = df_v_2.withColumn("PersonType" , f.upper("PersonType")).withColumn("Title" , f.initcap("Title"))\
@@ -156,15 +171,21 @@ def PersonTransform(RawDataFrame):
     cols = df_v_4.columns
     cols.remove("NameStyle")
     df_final_v = df_v_4.orderBy("BusinessEntityID").select(cols)
-
+    logger.info(f"Transforming of Person Table Ended")
     return df_final_v
 
 def extract_duplicates_mapping(CsvName):
+    logger.info(f"Extracting {CsvName} Mapping Table Started")
     try:
-        return spark.read.format("csv").option("header" , True).load(f"hdfs:/nifi_dest/duplicates_mapping/{CsvName}")
+        mapping_table =  spark.read.format("csv").option("header" , True).load(f"hdfs:/nifi_dest/duplicates_mapping/{CsvName}")
+        logger.info(f"Extracting {CsvName} Mapping Table Ended")
+        return mapping_table
     except Exception as e:
         return None
+    
+
 def CurrencyRateTransform(RawDataFrame):
+    logger.info(f"Transforming of CurrencyRate Table Started")
     df_v_1 = RawDataFrame.withColumn("CurrencyRateDate" , f.col("CurrencyRateDate").cast(types.DateType()))\
                      .withColumn("ModifiedDate" , f.col("ModifiedDate").cast(types.DateType()))
     df_v_2 = df_v_1.withColumn("FromCurrencyCode" , f.upper("FromCurrencyCode"))\
@@ -173,17 +194,20 @@ def CurrencyRateTransform(RawDataFrame):
                 .withColumn("EndOfDayRate" , f.col("EndOfDayRate").cast(types.DecimalType(10 , 4)))
 
     df_final_v = df_v_3.orderBy("CurrencyRateID")
-
+    logger.info(f"Transforming of CurrencyRate Table Ended")
     return df_final_v
 
 
 def proccess_duplicates(DataFrame , DuplicatesDataFrame , DuplicatesPrimaryKey , ReplacementKey):
+    logger.info(f"Processing Mapping Table Started")
     RawDupRdd = DuplicatesDataFrame.rdd.collect()
     to_replace = [*map(lambda row : int(row[f"{DuplicatesPrimaryKey}"]) , RawDupRdd)]
     value = [*map(lambda row : int(row["smallest"]) , RawDupRdd)]
+    logger.info(f"Processing Mapping Table Ended")
     return DataFrame.replace(to_replace = to_replace , value = value , subset = [f"{ReplacementKey}"])
 
 def FactSalesTransform(SalesRawDataFrame , CustomerRawDataFrame):
+    logger.info(f"Transforming of FactSales Table Started")
     JoinedRawDataFrame = SalesRawDataFrame.alias("sales").join(CustomerRawDataFrame.alias("customer") , on = "CustomerID" , how = "inner")
     df_v_1 = JoinedRawDataFrame.select(["SalesOrderID" , "PersonID" , "StoreID" , "customer.TerritoryID" , "BillToAddressID" , "ShipToAddressID" 
                                     , "ShipMethodID" , "CreditCardID" , "CurrencyRateID" ,"customer.AccountNumber" ,  "OrderDate"
@@ -204,5 +228,5 @@ def FactSalesTransform(SalesRawDataFrame , CustomerRawDataFrame):
                 .withColumn("TotalDue" , f.col("TotalDue").cast(types.DecimalType(10 , 4)))
     
     df_final_v = df_v_4
-
+    logger.info(f"Transforming of FactSales Table Ended")
     return df_final_v
