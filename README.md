@@ -293,6 +293,26 @@ _Apache Airflow orchestrates ETL workflows for loading and transforming data int
 - All ETL code, workflows, and documentation support extensibility and future growth.
 
 ---
+## Documentation
+
+For full technical details, guides, diagrams, and explanations, use the MkDocs documentation site.
+
+### How to View the Documentation
+
+1. **Install MkDocs (if not already installed):**
+    ```bash
+    pip install mkdocs
+    ```
+2. **Serve the docs locally:**
+    ```bash
+    cd documentation
+    mkdocs serve
+    ```
+3. **Browse the docs:**
+    - Visit [http://localhost:8000](http://localhost:8000) in your browser.
+    - Topics include Data Architecture, Data Modeling, NiFi Flows, Airflow ETL, SQL, and more.
+
+---
 
 ## License
 
@@ -303,3 +323,4 @@ _Apache Airflow orchestrates ETL workflows for loading and transforming data int
 ## Author
 
 OmarGHamed
+
