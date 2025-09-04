@@ -323,6 +323,7 @@ For full technical details, guides, diagrams, and explanations, use the MkDocs d
 
 ## Author
 
-OmarGHamed
+[OmarGamalH](https://github.com/OmarGamalH)
+
 
 
