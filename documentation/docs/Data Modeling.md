@@ -9,3 +9,6 @@
 ## OLAP 
 ### Conceptual Data Model
 ![OLAP Conceptual Data Model](<assets/OLAP Conceptual Data Model.png>)
+
+### Logical Data Model
+![OLAP Logical Data Model](<assets/OLAP Logical Data Model.png>)

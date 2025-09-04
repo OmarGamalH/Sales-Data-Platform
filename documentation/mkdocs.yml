@@ -4,4 +4,6 @@ nav:
   - "Page 1 : Data Architecture": Data Architecture.md
   - "Page 2 : Data Modeling": Data Modeling.md
   - "Page 3 : Apache Nifi": Nifi.md
+  - "Page 4 : Apache Airflow & Utilities": Airflow.md
+  - "Page 5 : SQL Queries": Sql.md
 theme: readthedocs
