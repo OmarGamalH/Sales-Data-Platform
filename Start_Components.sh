@@ -14,3 +14,4 @@ sudo ./nifi.sh start
 # Starting Apache Airflow for Data Orchestration Layer
 echo "Starting Apache Airflow to use it as Orchestration Layer..."
 airflow standalone
+
