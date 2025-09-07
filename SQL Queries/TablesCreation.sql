@@ -100,3 +100,14 @@ CREATE TABLE Silver.FactSales
 )
 
 
+
+CREATE TABLE DataQuality.DataQuality
+(
+	TableName VARCHAR(255),
+	Status VARCHAR(255),
+	Entity VARCHAR(255),
+	Instance TEXT,
+	Name VARCHAR(255),
+	Value DECIMAL(20 , 4),
+	CreatedAt DATE
+)

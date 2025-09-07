@@ -1,5 +1,5 @@
 CREATE DATABASE SalesDataWarehouse;
 
-CREATE SCHEMA MetaData;
+CREATE SCHEMA DataQuality;
 CREATE SCHEMA Silver;
 CREATE SCHEMA Gold;

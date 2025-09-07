@@ -5,13 +5,15 @@ import logging
 import os 
 import datetime 
 from pyspark.sql.window import Window
-
+import pydeequ as pd
 
 current_dir = os.path.dirname(__file__)
 logging_file = os.path.join(current_dir ,"logs.log")
 
 spark = ps.SparkSession.builder \
         .config("spark.jars" , "/usr/local/nifi/sqljdbc/enu/jars/postgresql-42.7.7.jar")\
+        .config("spark.jars.packages" , pd.deequ_maven_coord)\
+        .config("spark.jars.excludes" , pd.f2j_maven_coord)\
         .appName("spark app").getOrCreate()
 
 
@@ -230,3 +232,27 @@ def FactSalesTransform(SalesRawDataFrame , CustomerRawDataFrame):
     df_final_v = df_v_4
     logger.info(f"Transforming of FactSales Table Ended")
     return df_final_v
+
+
+
+def DataQualityProcessing(DP_DF , Table , status):
+    cols = DP_DF.columns
+    new_cols = [*map(lambda column : column.capitalize() , cols)]
+    cols_mapping = dict(zip(cols , new_cols))
+    DQ_DF_v_1 = DP_DF.withColumnsRenamed(cols_mapping)
+    DQ_DF_final_v =  DQ_DF_v_1.select(f.lit(Table).alias("TableName")  , f.lit(status).alias("Status") , "*" , f.lit(datetime.datetime.now().date()).alias("CreatedAt"))
+
+    return DQ_DF_final_v
+
+
+def extract_postgres(Database , schema , table):
+
+   RawDataFrame =  spark.read.format("jdbc") \
+            .option("url", f"jdbc:postgresql://172.21.96.1:5432/{Database}") \
+            .option("dbtable", f"{schema}.{table}") \
+            .option("user", "postgres") \
+            .option("password", "Gemy0100") \
+            .option("driver", "org.postgresql.Driver")\
+            .load()
+   
+   return RawDataFrame

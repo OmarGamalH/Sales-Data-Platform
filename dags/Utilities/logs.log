@@ -96,3 +96,238 @@
 2025-09-04 07:08:28,225 - Utilities.Utilities - INFO - Transforming of FactSales Table Ended
 2025-09-04 07:08:28,226 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.FactSales started
 2025-09-04 07:08:46,579 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.FactSales ended
+2025-09-07 06:15:10,904 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 06:16:09,519 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 06:51:03,085 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 06:51:03,475 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 07:01:53,331 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 07:01:53,586 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 07:04:15,597 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 07:04:26,087 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 07:06:29,600 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 07:06:30,071 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 07:06:40,387 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 07:06:40,853 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 07:15:49,939 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 07:15:50,468 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 07:16:21,905 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 07:16:22,083 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 07:17:46,150 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 07:17:46,396 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 07:18:03,178 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 07:18:03,641 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 07:19:22,634 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 07:19:22,884 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 07:20:23,952 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 07:20:24,207 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 07:21:08,886 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 07:21:09,090 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 07:23:09,653 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 07:23:09,873 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 07:26:28,562 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 07:26:28,749 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 07:27:06,301 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 07:27:06,519 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 07:29:16,727 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 07:29:16,975 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 07:29:26,742 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 07:29:26,955 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 07:30:52,920 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 07:30:53,171 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 07:53:16,865 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 07:53:21,082 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 07:53:30,098 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 07:53:31,397 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 08:10:15,097 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 08:10:30,606 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 08:11:04,163 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 08:11:04,454 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 08:28:18,081 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 08:28:19,392 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 08:28:54,197 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 08:28:54,422 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 08:29:32,841 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 08:30:03,270 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 08:30:03,643 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 09:20:00,653 - Utilities.Utilities - INFO - start the extraction of CreditCard.parquet
+2025-09-07 09:20:07,132 - Utilities.Utilities - INFO - extraction of CreditCard.parquet has been done successfully
+2025-09-07 09:35:04,457 - Utilities.Utilities - INFO - start the extraction of ShipMethod.parquet
+2025-09-07 09:35:10,037 - Utilities.Utilities - INFO - extraction of ShipMethod.parquet has been done successfully
+2025-09-07 09:42:46,786 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 09:42:47,302 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 09:42:52,003 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 09:42:52,458 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 09:42:55,064 - Utilities.Utilities - INFO - start the extraction of CreditCard.parquet
+2025-09-07 09:42:55,307 - Utilities.Utilities - INFO - extraction of CreditCard.parquet has been done successfully
+2025-09-07 09:42:57,931 - Utilities.Utilities - INFO - start the extraction of ShipMethod.parquet
+2025-09-07 09:42:58,164 - Utilities.Utilities - INFO - extraction of ShipMethod.parquet has been done successfully
+2025-09-07 09:44:03,025 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 09:45:07,178 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 09:51:01,623 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 09:51:20,474 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 09:52:28,151 - Utilities.Utilities - INFO - start the extraction of ShipMethod.parquet
+2025-09-07 09:52:28,872 - Utilities.Utilities - INFO - extraction of ShipMethod.parquet has been done successfully
+2025-09-07 09:54:54,441 - Utilities.Utilities - INFO - start the extraction of ShipMethod.parquet
+2025-09-07 09:54:56,615 - Utilities.Utilities - INFO - extraction of ShipMethod.parquet has been done successfully
+2025-09-07 10:05:27,824 - Utilities.Utilities - INFO - start the extraction of SalesTerritory.parquet
+2025-09-07 10:05:31,496 - Utilities.Utilities - INFO - extraction of SalesTerritory.parquet has been done successfully
+2025-09-07 10:20:33,399 - Utilities.Utilities - INFO - start the extraction of Store.parquet
+2025-09-07 10:20:35,044 - Utilities.Utilities - INFO - extraction of Store.parquet has been done successfully
+2025-09-07 10:30:14,561 - Utilities.Utilities - INFO - start the extraction of Person.parquet
+2025-09-07 10:30:16,735 - Utilities.Utilities - INFO - extraction of Person.parquet has been done successfully
+2025-09-07 10:42:24,713 - Utilities.Utilities - INFO - start the extraction of CurrencyRate.parquet
+2025-09-07 10:42:26,717 - Utilities.Utilities - INFO - extraction of CurrencyRate.parquet has been done successfully
+2025-09-07 10:49:01,891 - Utilities.Utilities - INFO - start the extraction of CurrencyRate.parquet
+2025-09-07 10:49:02,761 - Utilities.Utilities - INFO - extraction of CurrencyRate.parquet has been done successfully
+2025-09-07 10:56:06,324 - Utilities.Utilities - INFO - start the extraction of SalesOrderHeader.parquet
+2025-09-07 10:56:09,329 - Utilities.Utilities - INFO - extraction of SalesOrderHeader.parquet has been done successfully
+2025-09-07 10:57:09,933 - Utilities.Utilities - INFO - start the extraction of SalesOrderHeader.parquet
+2025-09-07 10:57:10,847 - Utilities.Utilities - INFO - extraction of SalesOrderHeader.parquet has been done successfully
+2025-09-07 11:19:07,203 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 11:19:32,524 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 11:20:10,095 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 11:20:15,530 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 11:20:50,041 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 11:21:12,524 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 11:21:12,528 - Utilities.Utilities - INFO - Transforming of Address Table Started
+2025-09-07 11:21:14,493 - Utilities.Utilities - INFO - Transforming of Address Table Ended
+2025-09-07 11:21:14,494 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.dimaddress started
+2025-09-07 11:31:37,195 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 11:31:46,484 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 11:32:22,112 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 11:32:26,739 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 11:32:53,888 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 11:33:08,449 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 11:33:08,450 - Utilities.Utilities - INFO - Transforming of Address Table Started
+2025-09-07 11:33:09,710 - Utilities.Utilities - INFO - Transforming of Address Table Ended
+2025-09-07 11:33:09,711 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.dimaddress started
+2025-09-07 11:33:25,182 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.dimaddress ended
+2025-09-07 11:34:34,237 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 11:34:36,631 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 11:35:07,509 - Utilities.Utilities - INFO - start the extraction of CreditCard.parquet
+2025-09-07 11:35:18,691 - Utilities.Utilities - INFO - extraction of CreditCard.parquet has been done successfully
+2025-09-07 11:35:43,331 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 11:35:46,978 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 11:36:12,975 - Utilities.Utilities - INFO - start the extraction of CreditCard.parquet
+2025-09-07 11:36:29,257 - Utilities.Utilities - INFO - extraction of CreditCard.parquet has been done successfully
+2025-09-07 11:36:29,258 - Utilities.Utilities - INFO - Transforming of CreditCard Table Started
+2025-09-07 11:36:30,264 - Utilities.Utilities - INFO - Transforming of CreditCard Table Ended
+2025-09-07 11:36:30,265 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.dimcreditcard started
+2025-09-07 11:36:58,929 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.dimcreditcard ended
+2025-09-07 11:37:59,593 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 11:38:02,117 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 11:38:36,798 - Utilities.Utilities - INFO - start the extraction of ShipMethod.parquet
+2025-09-07 11:38:51,231 - Utilities.Utilities - INFO - extraction of ShipMethod.parquet has been done successfully
+2025-09-07 11:39:15,879 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 11:39:19,745 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 11:39:47,656 - Utilities.Utilities - INFO - start the extraction of ShipMethod.parquet
+2025-09-07 11:40:03,465 - Utilities.Utilities - INFO - extraction of ShipMethod.parquet has been done successfully
+2025-09-07 11:40:03,466 - Utilities.Utilities - INFO - Transforming of ShipMethod Table Started
+2025-09-07 11:40:05,161 - Utilities.Utilities - INFO - Transforming of ShipMethod Table Ended
+2025-09-07 11:40:05,161 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimShipMethod started
+2025-09-07 11:40:22,034 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimShipMethod ended
+2025-09-07 11:41:23,752 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimShipMethod started
+2025-09-07 11:47:48,832 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 11:48:08,302 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 11:48:42,971 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 11:48:46,543 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 11:49:15,169 - Utilities.Utilities - INFO - start the extraction of Address.parquet
+2025-09-07 11:49:32,633 - Utilities.Utilities - INFO - extraction of Address.parquet has been done successfully
+2025-09-07 11:49:32,657 - Utilities.Utilities - INFO - Transforming of Address Table Started
+2025-09-07 11:49:35,406 - Utilities.Utilities - INFO - Transforming of Address Table Ended
+2025-09-07 11:49:35,407 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.dimaddress started
+2025-09-07 11:49:56,664 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.dimaddress ended
+2025-09-07 11:51:13,274 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 11:51:15,759 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 11:51:49,998 - Utilities.Utilities - INFO - start the extraction of CreditCard.parquet
+2025-09-07 11:52:07,969 - Utilities.Utilities - INFO - extraction of CreditCard.parquet has been done successfully
+2025-09-07 11:52:37,443 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 11:52:41,511 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 11:53:15,042 - Utilities.Utilities - INFO - start the extraction of CreditCard.parquet
+2025-09-07 11:53:31,517 - Utilities.Utilities - INFO - extraction of CreditCard.parquet has been done successfully
+2025-09-07 11:53:31,518 - Utilities.Utilities - INFO - Transforming of CreditCard Table Started
+2025-09-07 11:53:33,280 - Utilities.Utilities - INFO - Transforming of CreditCard Table Ended
+2025-09-07 11:53:33,281 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.dimcreditcard started
+2025-09-07 11:54:08,683 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.dimcreditcard ended
+2025-09-07 11:55:19,848 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 11:55:21,919 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 11:56:07,576 - Utilities.Utilities - INFO - start the extraction of ShipMethod.parquet
+2025-09-07 11:56:24,502 - Utilities.Utilities - INFO - extraction of ShipMethod.parquet has been done successfully
+2025-09-07 11:56:59,600 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 11:57:03,712 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 11:57:43,542 - Utilities.Utilities - INFO - start the extraction of ShipMethod.parquet
+2025-09-07 11:58:04,092 - Utilities.Utilities - INFO - extraction of ShipMethod.parquet has been done successfully
+2025-09-07 11:58:04,092 - Utilities.Utilities - INFO - Transforming of ShipMethod Table Started
+2025-09-07 11:58:06,070 - Utilities.Utilities - INFO - Transforming of ShipMethod Table Ended
+2025-09-07 11:58:06,071 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimShipMethod started
+2025-09-07 11:58:36,162 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimShipMethod ended
+2025-09-07 12:00:23,650 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 12:00:26,907 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 12:01:06,536 - Utilities.Utilities - INFO - start the extraction of SalesTerritory.parquet
+2025-09-07 12:01:31,488 - Utilities.Utilities - INFO - extraction of SalesTerritory.parquet has been done successfully
+2025-09-07 12:02:03,999 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 12:02:09,836 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 12:02:55,654 - Utilities.Utilities - INFO - start the extraction of SalesTerritory.parquet
+2025-09-07 12:03:14,191 - Utilities.Utilities - INFO - extraction of SalesTerritory.parquet has been done successfully
+2025-09-07 12:03:14,203 - Utilities.Utilities - INFO - Transforming of Territory Table Started
+2025-09-07 12:03:16,688 - Utilities.Utilities - INFO - Transforming of Territory Table Ended
+2025-09-07 12:03:16,688 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimTerritory started
+2025-09-07 12:03:48,928 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimTerritory ended
+2025-09-07 12:05:13,973 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 12:05:16,258 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 12:05:49,448 - Utilities.Utilities - INFO - start the extraction of Store.parquet
+2025-09-07 12:06:00,902 - Utilities.Utilities - INFO - extraction of Store.parquet has been done successfully
+2025-09-07 12:06:23,254 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 12:06:26,091 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 12:06:57,213 - Utilities.Utilities - INFO - start the extraction of Store.parquet
+2025-09-07 12:07:13,560 - Utilities.Utilities - INFO - extraction of Store.parquet has been done successfully
+2025-09-07 12:08:24,630 - Utilities.Utilities - INFO - start the extraction of Store.parquet
+2025-09-07 12:08:45,347 - Utilities.Utilities - INFO - extraction of Store.parquet has been done successfully
+2025-09-07 12:08:45,348 - Utilities.Utilities - INFO - Transforming of Store Table Started
+2025-09-07 12:08:46,701 - Utilities.Utilities - INFO - Transforming of Store Table Ended
+2025-09-07 12:08:46,701 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimStore started
+2025-09-07 12:09:17,059 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimStore ended
+2025-09-07 12:10:44,788 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 12:10:48,567 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 12:11:15,612 - Utilities.Utilities - INFO - start the extraction of Person.parquet
+2025-09-07 12:11:31,681 - Utilities.Utilities - INFO - extraction of Person.parquet has been done successfully
+2025-09-07 12:11:51,085 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 12:11:55,173 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 12:12:26,377 - Utilities.Utilities - INFO - start the extraction of Person.parquet
+2025-09-07 12:12:41,847 - Utilities.Utilities - INFO - extraction of Person.parquet has been done successfully
+2025-09-07 12:12:41,848 - Utilities.Utilities - INFO - Transforming of Person Table Started
+2025-09-07 12:12:43,633 - Utilities.Utilities - INFO - Transforming of Person Table Ended
+2025-09-07 12:12:43,634 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimPerson started
+2025-09-07 12:13:08,842 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimPerson ended
+2025-09-07 12:14:19,005 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 12:14:23,359 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 12:15:06,137 - Utilities.Utilities - INFO - start the extraction of CurrencyRate.parquet
+2025-09-07 12:15:21,415 - Utilities.Utilities - INFO - extraction of CurrencyRate.parquet has been done successfully
+2025-09-07 12:15:53,588 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 12:15:59,857 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 12:16:35,027 - Utilities.Utilities - INFO - start the extraction of CurrencyRate.parquet
+2025-09-07 12:16:54,376 - Utilities.Utilities - INFO - extraction of CurrencyRate.parquet has been done successfully
+2025-09-07 12:16:54,379 - Utilities.Utilities - INFO - Transforming of CurrencyRate Table Started
+2025-09-07 12:16:56,393 - Utilities.Utilities - INFO - Transforming of CurrencyRate Table Ended
+2025-09-07 12:16:56,394 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimCurrencyRate started
+2025-09-07 12:17:22,808 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.DimCurrencyRate ended
+2025-09-07 12:18:23,224 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 12:18:26,677 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 12:18:54,133 - Utilities.Utilities - INFO - start the extraction of SalesOrderHeader.parquet
+2025-09-07 12:19:09,929 - Utilities.Utilities - INFO - extraction of SalesOrderHeader.parquet has been done successfully
+2025-09-07 12:19:30,259 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 12:19:33,803 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
+2025-09-07 12:20:11,198 - Utilities.Utilities - INFO - start the extraction of SalesOrderHeader.parquet
+2025-09-07 12:20:30,920 - Utilities.Utilities - INFO - extraction of SalesOrderHeader.parquet has been done successfully
+2025-09-07 12:20:30,921 - Utilities.Utilities - INFO - start the extraction of Customer.parquet
+2025-09-07 12:20:31,818 - Utilities.Utilities - INFO - extraction of Customer.parquet has been done successfully
+2025-09-07 12:20:31,818 - Utilities.Utilities - INFO - Transforming of FactSales Table Started
+2025-09-07 12:20:34,037 - Utilities.Utilities - INFO - Extracting Store Mapping Table Started
+2025-09-07 12:20:46,363 - Utilities.Utilities - INFO - Extracting Store Mapping Table Ended
+2025-09-07 12:20:46,364 - Utilities.Utilities - INFO - Processing Mapping Table Started
+2025-09-07 12:20:48,055 - Utilities.Utilities - INFO - Processing Mapping Table Ended
+2025-09-07 12:20:48,778 - Utilities.Utilities - INFO - Transforming of FactSales Table Ended
+2025-09-07 12:20:48,779 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.FactSales started
+2025-09-07 12:21:19,293 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.silver.FactSales ended
+2025-09-07 12:22:48,597 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality started
+2025-09-07 12:22:53,046 - Utilities.Utilities - INFO - loading of Dataframe To salesdatawarehouse.dataquality.dataquality ended
