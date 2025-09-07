@@ -873,3 +873,15 @@ For full technical details, guides, diagrams, and explanations, use the MkDocs d
 - All code, workflows, and documentation are organized to support modularity, clarity, and ease of navigation.
 - Editable diagrams are stored as .drawio files for further updates.
 - The documentation site uses MkDocs for easy navigation and search.
+
+---
+
+## License
+
+[MIT](LICENSE)
+
+---
+
+## Author
+
+[OmarGamalH](https://github.com/OmarGamalH)
