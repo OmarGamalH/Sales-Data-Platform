@@ -10,125 +10,123 @@
 
 ## Setup Steps
 
-1. **Clone the Repository**
-    ```bash
+1. Clone the Repository
+   ```bash
    git clone https://github.com/OmarGHamed/Sales-Data-Platform.git
    cd Sales-Data-Platform
    ```
-2. **Run "Run_This_Once.sh" only Once** to inialize the packages directory that will be used in airflow
+2. Run "Run_This_Once.sh" only once to initialize the packages directory that will be used in Airflow.
+3. Run "Start_Components.sh" to start all components (Hadoop, NiFi, Airflow).
+4. Start Database: Create the PostgreSQL database and schemas using the SQL scripts referenced in Sql.md.
+5. Run Initial Data Ingestion: Use the NiFi UI to trigger workflows, verify HDFS data, and trigger the Airflow DAG via NiFi.
+6. Check Data Warehouse: Use psql or PgAdmin to inspect loaded tables.
+7. Visualize in Power BI: Connect to PostgreSQL and build simple dashboards.
 
-3. **Run "Start_Components.sh"** to start all components (Hadoop , NIFI , Airflow)
-
-4. **Start Database** : Create PostgreSQL database using provided SQL scripts in the `Sql.md` documentation.
-
-5. **Run Initial Data Ingestion** : Use NiFi UI to trigger workflows and verify HDFS data and trigger Airflow DAG via NiFi.
-
-6. **Check Data Warehouse** : Use `psql` or PgAdmin to inspect loaded tables.
-
-7. **Visualize in Power BI** : Connect to PostgreSQL and build simple dashboards.
-
+---
 
 ## Directory Structure
 
+The following reflects the current repository layout.
 
-### Root Level (`./`)
+### Root Level (./)
 
-- **Apache Nifi/**: Contains NiFi flows and configuration files.
-- **Data Architecture/**: Editable data architecture diagrams.
-- **Data Models/**: Editable OLTP/OLAP data model diagrams.
-- **README.md**: Main project readme.
-- **Run_This_Once.sh**: Shell script for initial setup steps.
-- **SQL Queries/**: Database creation, table and trigger scripts.
-- **Start_Components.sh**: Shell script to start platform components.
-- **dags/**: Airflow DAG scripts and utilities.
-- **documentation/**: Project documentation site (MkDocs).
-
----
-
-### Apache NiFi (`./Apache Nifi`)
-
-- **Individual Flows/**: NiFi JSON flows for each table.
-
-    - `Address_table.json`
-    - `CreditCard_table.json`
-    - `CurrencyRate_table.json`
-    - `Customer_table.json`
-    - `Person_table.json`
-    - `SalesOrderHeader_table.json`
-    - `ShipMethod_table.json`
-    - `Store_table.json`
-    - `Territory_table.json`
-
-- **Whole Flow/**: Complete NiFi flow for the project.
-    - `Sales_Data_Platform_Project.json`
+- Apache Nifi/
+- Data Architecture/
+- Data Models/
+- README.md
+- Run_This_Once.sh
+- SQL Queries/
+- Start_Components.sh
+- dags/
+- documentation/
 
 ---
 
-### Data Architecture (`./Data Architecture`)
+### Apache NiFi (./Apache Nifi)
 
-- `Project's Data Architecture(Editable version).drawio`: Editable architecture flow diagram.
-
----
-
-### Data Models (`./Data Models`)
-
-- `OLAP Conceptual Data Model.drawio`: Editable OLAP model diagram.
-- `OLTP Conceptual Data Model.drawio`: Editable OLTP model diagram.
-
----
-
-### SQL Queries (`./SQL Queries`)
-
-- `DataWarehouseCreation.sql`: Database and schema creation.
-- `TablesCreation.sql`: All table definitions.
-- `TriggersCreation.sql`: Table triggers for upsert logic.
+- Individual Flows/
+  - Address_table.json
+  - Airflow_Triggering.json
+  - CreditCard_table.json
+  - CurrencyRate_table.json
+  - Customer_table.json
+  - Person_table.json
+  - SalesOrderHeader_table.json
+  - ShipMethod_table.json
+  - Store_table.json
+  - Territory_table.json
+- Whole Flow/
+  - Sales_Data_Platform_Project.json
 
 ---
 
-### Airflow DAGs (`./dags`)
+### Data Architecture (./Data Architecture)
 
-- `SalesDataPlatform.py`: Main Airflow DAG for ETL orchestration.
-- `Utilities/`: Shared utility scripts and artifacts.
-    - `Utilities.py`: All ETL transformation and helper functions.
-    - `__pycache__/`: Python cache.
-    - `artifacts/`: (Empty) For future use.
-    - `logs.log`: ETL and Spark logs.
+- Project's Data Architecture(Editable version).drawio
 
 ---
 
-### Documentation (`./documentation`)
+### Data Models (./Data Models)
 
-- `docs/`: All markdown documentation and assets for the project.
-
-    - `Airflow.md`
-    - `Data Architecture.md`
-    - `Data Modeling.md`
-    - `Nifi.md`
-    - `Sql.md`
-    - `assets/`: Images for docs.
-    - `index.md`
-    - `last.md` (Quickstart/setup guide)
-
-- `mkdocs.yml`: MkDocs configuration file.
+- OLAP Conceptual Data Model.drawio
+- OLTP Conceptual Data Model.drawio
 
 ---
 
-### Documentation Assets (`./documentation/docs/assets`)
+### SQL Queries (./SQL Queries)
 
-- `Address.png`
-- `Nifi Project workflow.png`
-- `OLAP Logical Data Model.png`
-- `OLAP Conceptual Data Model.png`
-- `OLTP Conceptual data model.png`
-- `OLTP.png`
-- `"Project's Data Architecture.png"`
-- `Airflow Dag.png`
+- DataWarehouseCreation.sql
+- TablesCreation.sql
+- TriggersCreation.sql
+- ViewsCreation.sql
+
+---
+
+### Airflow DAGs (./dags)
+
+- SalesDataPlatform.py
+- Utilities/
+
+        - Utilities.py
+        - DataQuality.py
+        - __pycache__/            (Python bytecode cache)
+        - artifacts/              (currently empty; used for archived outputs)
+        - logs.log                (ETL and Spark logs)
+
+---
+
+### Documentation (./documentation)
+
+- docs/
+
+        - Airflow.md
+        - Data Architecture.md
+        - Data Modeling.md
+        - Nifi.md
+        - Sql.md
+        - assets/
+        - index.md
+        - last.md  (this file)
+- mkdocs.yml
+
+---
+
+### Documentation Assets (./documentation/docs/assets)
+
+- Address.png
+- Airflow Dag.png
+- Nifi Project workflow.png
+- OLAP Logical Data Model.png
+- OLAP Conceptual Data Model.png
+- OLTP Conceptual data model.png
+- OLTP.png
+- "Project's Data Architecture.png"
 
 ---
 
 ### Notes
 
 - All code, workflows, and documentation are organized to support modularity, clarity, and ease of navigation.
-- Editable diagrams are stored as `.drawio` files for further updates.
+- Editable diagrams are stored as .drawio files for further updates.
 - The documentation site uses MkDocs for easy navigation and search.
 

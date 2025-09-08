@@ -1,58 +1,103 @@
 # SQL Queries
 
-
 ## Overview
 
-The SQL queries in this repository are designed to:
+This repository includes SQL scripts to provision the warehouse, create tables, implement upsert-style triggers, and expose an analytical view.
 
-- Create the Data Warehouse and its schemas.
-- Define the dimensional and fact tables in the "Silver" layer.
-- Implement triggers to handle upserts and maintain consistent, deduplicated data.
+Included files:
+
+- SQL Queries/DataWarehouseCreation.sql
+- SQL Queries/TablesCreation.sql
+- SQL Queries/TriggersCreation.sql
+- SQL Queries/ViewsCreation.sql
 
 ---
 
 ## 1. Data Warehouse and Schema Creation
 
-**File:** `DataWarehouseCreation.sql`
+File: SQL Queries/DataWarehouseCreation.sql
 
-This script provisions the main database and its organizational schemas:
+Provisions the main database and core schemas:
 
-- `CREATE DATABASE SalesDataWarehouse;` - For Data Warehouse Creation
-- `CREATE SCHEMA MetaData;` — For metadata management schema.
-- `CREATE SCHEMA Silver;`  — For Silver Layer.
-- `CREATE SCHEMA Gold;`    — For Gold Layer.
+- CREATE DATABASE SalesDataWarehouse;
+- CREATE SCHEMA DataQuality; — Schema for data quality logging and metrics.
+- CREATE SCHEMA Silver; — Core dimensional and fact layer.
+- CREATE SCHEMA Gold; — Presentation and analytics layer.
 
 ---
 
 ## 2. Table Definitions
 
-**File:** `TablesCreation.sql`
+File: SQL Queries/TablesCreation.sql
 
-Defines the structure of all core dimension and fact tables in the Silver layer:
+Creates the dimensional and fact tables in Silver, plus a data quality table.
 
-- **Dimension Tables:**  
+- Dimension tables (Silver):
 
-  - `Silver.DimAddress`
-  - `Silver.DimCreditCard`
-  - `Silver.DimTerritory`
-  - `Silver.DimShipMethod`
-  - `Silver.DimStore`
-  - `Silver.DimPerson`
-  - `Silver.DimCurrencyRate`
+    - Silver.DimAddress
+    - Silver.DimCreditCard
+    - Silver.DimTerritory
+    - Silver.DimShipMethod
+    - Silver.DimStore
+    - Silver.DimPerson
+    - Silver.DimCurrencyRate
 
-- **Fact Table:**  
+- Fact table (Silver):
 
-  - `Silver.FactSales`
+    - Silver.FactSales
+
+- Data quality table:
+
+    - DataQuality.DataQuality
+
+Notes:
+
+- Types and constraints are defined per table (primary keys on each dimension, SalesOrderID on the fact table).
+- The DataQuality.DataQuality table captures checks with fields such as TableName, Status, Entity, Instance, Name, Value, CreatedAt.
 
 ---
 
 ## 3. Triggers for Deduplication and Upserts
 
-**File:** `TriggersCreation.sql`
+File: SQL Queries/TriggersCreation.sql
 
-Implements BEFORE INSERT triggers for each table to ensure upsert (insert or update) behavior and prevent duplicate records:
+Implements BEFORE INSERT triggers in PL/pgSQL to achieve idempotent upserts. Each trigger deletes any existing row with the same primary key before inserting the new row.
 
-For each insert:
+- Silver.DimAddress: FnTrgAddress / TrgAddress
+- Silver.DimCreditCard: FnTrgCreditCard / TrgCreditCard
+- Silver.DimTerritory: FnTrgTerritory / TrgTerritory
+- Silver.DimShipMethod: FnTrgShipMethod / TrgShipMethod
+- Silver.DimStore: FnTrgStore / TrgStore
+- Silver.DimPerson: FnTrgPerson / TrgPerson
+- Silver.DimCurrencyRate: FnTrgCurrencyRate / TrgCurrencyRate
+- Silver.FactSales: FnTrgFactSales / TrgFactSales
 
-  - The trigger deletes any existing row with the same primary key.
-  - The new row is then inserted, effectively replacing the old record.
+---
+
+## 4. Analytical View
+
+File: SQL Queries/ViewsCreation.sql
+
+Creates Gold.FullView, a presentation-layer view that joins Silver.FactSales to all related dimensions to provide a denormalized, analytics-ready dataset. It includes:
+
+- Sales facts (amounts, dates, account, status)
+- Bill-to and ship-to address attributes
+- Credit card attributes
+- Person attributes
+- Ship method attributes
+- Store attributes
+- Territory attributes (including Group, YTD, LastYear metrics)
+- Currency rate attributes
+
+Join keys align on the foreign keys in Silver.FactSales to their respective dimension primary keys.
+
+---
+
+## Execution order
+
+Recommended order when initializing a fresh environment:
+
+1. DataWarehouseCreation.sql
+2. TablesCreation.sql
+3. TriggersCreation.sql
+4. ViewsCreation.sql
