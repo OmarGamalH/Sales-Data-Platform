@@ -11,6 +11,7 @@ a production‑minded sales data platform that integrates data lake and data war
 - [Data Ingestion (NiFi)](#data-ingestion-nifi)
 - [Airflow Orchestration](#airflow-orchestration)
 - [SQL Queries](#sql-queries)
+- [DashBoards](#dashboards)
 - [Setup & Additional Info](#setup--additional-info)
 - [Documentation](#documentation)
 ---
@@ -719,7 +720,16 @@ Recommended order when initializing a fresh environment:
 4. ViewsCreation.sql
 
 ---
+# DashBoards
 
+## Home
+<img width="1120" height="627" alt="Image" src="https://github.com/user-attachments/assets/09d68751-3550-4379-908e-9da8838cc544" />
+
+## Map
+<img width="1116" height="627" alt="Image" src="https://github.com/user-attachments/assets/973fd922-26cb-43c5-a0f2-7b6009dfa3bb" />
+
+
+---
 # Setup & Additional Info
 
 ## Prerequisites
@@ -817,6 +827,7 @@ The following reflects the current repository layout.
 
 ---
 
+
 ### Documentation (./documentation)
 
 - docs/
@@ -885,3 +896,4 @@ For full technical details, guides, diagrams, and explanations, use the MkDocs d
 ## Author
 
 [OmarGamalH](https://github.com/OmarGamalH)
+
